@@ -2,210 +2,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | ChatGPT vs DeepSeek</title>
+    <title>Jagadeesh G | Portfolio</title>
     <style>
+        /* Base styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffcc, #0040ff, #7300ff);
-            background-size: 400% 400%;
-            animation: rainbowBG 10s infinite linear;
-            scroll-behavior: smooth;
-        }
-
-        @keyframes rainbowBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.8);
+            background-color: #0040ff;
             color: white;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.5s ease;
         }
 
-        header:hover {
-            background: rgba(0, 0, 0, 0.95);
+        header h1 {
+            margin: 0;
+            font-size: 28px;
         }
 
+        /* Navigation */
         nav ul {
-            list-style: none;
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+            text-align: center;
+            background-color: #333;
+            margin: 0;
         }
 
         nav ul li {
             display: inline;
+            margin-right: 20px;
         }
 
         nav ul li a {
-            color: white;
             text-decoration: none;
-            font-size: 20px;
-            padding: 12px 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: white;
-            color: black;
-            transform: scale(1.1);
+            background-color: #0040ff;
         }
 
+        /* Section Styles */
         section {
-            padding: 100px 20px;
-            text-align: center;
-            margin-top: 100px;
-            animation: fadeIn 1.5s ease-out;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        section h2 {
+            font-size: 24px;
+            color: #0040ff;
+            margin-bottom: 15px;
         }
 
-        .slide {
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 40px auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        section p, section ul {
+            font-size: 16px;
+            line-height: 1.6;
         }
 
-        .slide:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        section ul {
+            padding-left: 20px;
         }
 
         .skills-container {
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            justify-content: space-between;
             flex-wrap: wrap;
-            animation: slideIn 1.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .skill {
             width: 120px;
             height: 120px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 15px;
-            background: #fff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            align-items: center;
+            background: #f4f4f4;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
         }
 
         .skill:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .skill img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
+            width: 50%;
         }
 
-        .contact-form input, .contact-form textarea, .contact-form button {
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
             width: 100%;
             padding: 12px;
             margin-bottom: 15px;
-            border-radius: 8px;
+            border-radius: 5px;
             border: 1px solid #ddd;
             font-size: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #4CAF50;
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
         }
 
         .contact-form button {
-            background: #4CAF50;
+            background-color: #0040ff;
             color: white;
-            border: none;
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
+            border: none;
         }
 
         .contact-form button:hover {
-            background: #45a049;
-            transform: scale(1.05);
+            background-color: #0033cc;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            background-color: #333;
             color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
             font-size: 14px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                text-align: left;
+                padding-left: 20px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>ChatGPT vs DeepSeek</h1>
-    <nav>
-        <ul>
-            <li><a href="#myself">Myself</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <h1>Jagadeesh G | Web Developer</h1>
 </header>
 
-<section id="myself" class="slide">
+<nav>
+    <ul>
+        <li><a href="#myself">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="myself">
     <h2>About Me</h2>
-    <p>I am Jagadeesh G, a passionate web developer with a keen interest in coding and AI technologies.</p>
+    <p>I am Jagadeesh G, a passionate web developer with experience in building dynamic websites. I specialize in front-end technologies and enjoy solving complex problems through coding.</p>
 </section>
 
-<section id="education" class="slide">
+<section id="education">
     <h2>Education</h2>
-    <p>Completed Intermediate focusing on computer science and mathematics, currently exploring AI.</p>
+    <p>Completed Intermediate with a focus on computer science and mathematics. Currently pursuing further studies in web development and AI technologies.</p>
 </section>
 
-<section id="skills" class="slide">
+<section id="skills">
     <h2>Skills</h2>
     <div class="skills-container">
         <div class="skill"><img src="python-logo.png" alt="Python"></div>
@@ -215,24 +186,25 @@
     </div>
 </section>
 
-<section id="achievements" class="slide">
+<section id="achievements">
     <h2>Achievements</h2>
     <ul>
-        <li>2-1 Semester Topper in Cyber Security</li>
-        <li>Developed a personal portfolio website</li>
+        <li>Topper in Cyber Security during the 2-1 Semester</li>
+        <li>Successfully developed a personal portfolio website</li>
+        <li>Contributed to multiple open-source projects</li>
     </ul>
 </section>
 
-<section id="projects" class="slide">
+<section id="projects">
     <h2>Projects</h2>
     <ul>
-        <li>Portfolio Website - A personal project showcasing my skills and experience.</li>
-        <li>Weather App - A web application that fetches real-time weather data.</li>
-        <li>Task Manager - A simple to-do app with a database backend.</li>
+        <li><strong>Portfolio Website</strong> - Showcasing my skills and experiences in web development.</li>
+        <li><strong>Weather App</strong> - A web application to get real-time weather data.</li>
+        <li><strong>Task Manager</strong> - A to-do app with a database backend to manage tasks.</li>
     </ul>
 </section>
 
-<section id="contact" class="slide">
+<section id="contact">
     <h2>Contact</h2>
     <p>Email: jagadeeshg@example.com</p>
     <form class="contact-form">
