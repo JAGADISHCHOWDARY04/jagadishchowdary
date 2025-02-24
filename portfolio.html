@@ -1,38 +1,48 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jagadeesh G | Portfolio</title>
+    <title>Jagadeesh G | Web Developer Portfolio</title>
     <style>
         /* Base styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
+        /* Header */
         header {
             background-color: #0040ff;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 36px;
+            font-weight: bold;
         }
 
         /* Navigation */
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 10px 0;
             text-align: center;
             background-color: #333;
-            margin: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav ul li {
@@ -43,75 +53,89 @@
         nav ul li a {
             text-decoration: none;
             color: white;
-            font-size: 16px;
-            padding: 10px;
-            background-color: #555;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-size: 18px;
+            padding: 12px 18px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
         }
 
         nav ul li a:hover {
             background-color: #0040ff;
+            color: white;
         }
 
-        /* Section Styles */
+        /* Main content */
+        main {
+            margin-top: 100px; /* Offset for fixed header */
+            padding: 60px 20px;
+        }
+
         section {
-            padding: 40px 20px;
-            margin: 20px auto;
-            max-width: 1000px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         section h2 {
-            font-size: 24px;
+            font-size: 28px;
             color: #0040ff;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         section p, section ul {
             font-size: 16px;
-            line-height: 1.6;
+            color: #555;
         }
 
         section ul {
             padding-left: 20px;
         }
 
+        /* Skills */
         .skills-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
         }
 
         .skill {
-            width: 120px;
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
             border-radius: 8px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .skill:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .skill img {
-            width: 50%;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
         }
 
+        /* Contact form */
         .contact-form input,
         .contact-form textarea,
         .contact-form button {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             margin-bottom: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid #ddd;
             font-size: 16px;
         }
@@ -119,32 +143,45 @@
         .contact-form button {
             background-color: #0040ff;
             color: white;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
             background-color: #0033cc;
         }
 
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 15px;
             background-color: #333;
             color: white;
+            padding: 15px 0;
+            text-align: center;
             font-size: 14px;
         }
 
-        /* Responsiveness */
+        /* Responsive Layout */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
             nav ul {
                 text-align: left;
                 padding-left: 20px;
             }
 
             .skills-container {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .skill {
+                padding: 15px;
+            }
+
+            section {
+                margin: 20px 10px;
             }
         }
     </style>
@@ -166,54 +203,58 @@
     </ul>
 </nav>
 
-<section id="myself">
-    <h2>About Me</h2>
-    <p>I am Jagadeesh G, a passionate web developer with experience in building dynamic websites. I specialize in front-end technologies and enjoy solving complex problems through coding.</p>
-</section>
+<main>
 
-<section id="education">
-    <h2>Education</h2>
-    <p>Completed Intermediate with a focus on computer science and mathematics. Currently pursuing further studies in web development and AI technologies.</p>
-</section>
+    <section id="myself">
+        <h2>About Me</h2>
+        <p>Hello! I'm Jagadeesh G, a passionate web developer. I enjoy building dynamic, user-friendly websites and solving complex problems through coding. With a focus on front-end technologies and a deep interest in continuous learning, I strive to improve my skills and contribute to innovative projects.</p>
+    </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-        <div class="skill"><img src="python-logo.png" alt="Python"></div>
-        <div class="skill"><img src="java-logo.png" alt="Java"></div>
-        <div class="skill"><img src="html-logo.png" alt="HTML"></div>
-        <div class="skill"><img src="css-logo.png" alt="CSS"></div>
-    </div>
-</section>
+    <section id="education">
+        <h2>Education</h2>
+        <p>Currently pursuing a degree in Computer Science with a focus on web development. My academic background has provided me with a strong foundation in both theory and practical coding skills.</p>
+    </section>
 
-<section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-        <li>Topper in Cyber Security during the 2-1 Semester</li>
-        <li>Successfully developed a personal portfolio website</li>
-        <li>Contributed to multiple open-source projects</li>
-    </ul>
-</section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill"><img src="python-logo.png" alt="Python"> <p>Python</p></div>
+            <div class="skill"><img src="java-logo.png" alt="Java"> <p>Java</p></div>
+            <div class="skill"><img src="html-logo.png" alt="HTML"> <p>HTML</p></div>
+            <div class="skill"><img src="css-logo.png" alt="CSS"> <p>CSS</p></div>
+        </div>
+    </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>Portfolio Website</strong> - Showcasing my skills and experiences in web development.</li>
-        <li><strong>Weather App</strong> - A web application to get real-time weather data.</li>
-        <li><strong>Task Manager</strong> - A to-do app with a database backend to manage tasks.</li>
-    </ul>
-</section>
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Topper in Cyber Security (2-1 Semester)</li>
+            <li>Developed a personal portfolio website showcasing my projects</li>
+            <li>Contributed to open-source projects on GitHub</li>
+        </ul>
+    </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: jagadeeshg@example.com</p>
-    <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Portfolio Website</strong> - Showcasing my web development journey, skills, and projects.</li>
+            <li><strong>Weather App</strong> - A web app to fetch and display real-time weather data.</li>
+            <li><strong>Task Manager</strong> - A simple to-do app with a backend to store tasks in a database.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me via the contact form below:</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</main>
 
 <footer>
     <p>&copy; 2025 Jagadeesh G. All Rights Reserved.</p>
